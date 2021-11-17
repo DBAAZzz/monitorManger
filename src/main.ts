@@ -19,6 +19,6 @@ const app = createApp(App)
 
 app.use(router)
 app.mount('#app')
-app.use(ElementPlus, { locale })
+app.use(ElementPlus, { locale, size: 'small' })
 app.use(i18n)
 

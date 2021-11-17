@@ -50,6 +50,9 @@ export default defineConfig(({ command, mode }) => {
         }
       }
     },
-    plugins: [vue(), vueJsx()]
+    plugins: [
+      vue(),
+      vueJsx()
+    ]
   }
 })

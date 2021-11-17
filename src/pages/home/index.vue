@@ -27,11 +27,11 @@ let options: DefaultOption[] = [
     type: 'dateRange',
     label: '时间',
     key: ['startTime', 'endTime'],
-    value: ''
+    value: []
   }
 ]
 const getParams = (params) => {
-
+  console.log('params', params)
 }
 const loginFunc = async (userName: string, password: string) => {
   let data = await login({

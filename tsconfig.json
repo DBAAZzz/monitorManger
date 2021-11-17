@@ -26,7 +26,10 @@
       "@api/*": [
         "src/api/*"
       ]
-    }
+    },
+    "types": [
+      "element-plus/global"
+    ]
   },
   "include": [
     "src/**/*.ts",

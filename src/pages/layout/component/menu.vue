@@ -1,5 +1,5 @@
 <script setup lang="ts" >
-  import { reactive } from "vue";
+import { reactive } from "vue";
 
 const menuList = reactive([
   {
@@ -53,27 +53,31 @@ const menuList = reactive([
         text-color="#fff"
         router
       >
-        <template v-for="menuItem in menuList" :key="menuItem.id" >
+        <template v-for="menuItem in menuList" :key="menuItem.id">
           <el-sub-menu v-if="menuItem.menuList.length != 0" :index="menuItem.path">
             <template #title>
-              <span>{{menuItem.menuName}}</span>
+              <span>{{ menuItem.menuName }}</span>
             </template>
-            <template v-for="subMenu in menuItem.menuList" :key="subMenu.id" >
-              <el-sub-menu v-if="subMenu.menuList.length != 0">
+            <template v-for="subMenu in menuItem.menuList" :key="subMenu.id">
+              <el-sub-menu v-if="subMenu.menuList.length != 0" :index="menuItem.path">
                 <template #title>
-                  <span>{{subMenu.menuName}}</span>
+                  <span>{{ subMenu.menuName }}</span>
                 </template>
-                  <el-menu-item v-for="(subMenuItem, subMenuItemIndex) in subMenu.menuList" :index="subMenuItem.path" :key="subMenuItemIndex">
-                    <span>{{subMenuItem.menuName}}</span>
-                  </el-menu-item>
+                <el-menu-item
+                  v-for="(subMenuItem, subMenuItemIndex) in subMenu.menuList"
+                  :index="subMenuItem.path"
+                  :key="subMenuItemIndex"
+                >
+                  <span>{{ subMenuItem.menuName }}</span>
+                </el-menu-item>
               </el-sub-menu>
-              <el-menu-item v-else :index="subMenu.path" >
-                <span>{{subMenu.menuName}}</span>
+              <el-menu-item v-else :index="subMenu.path">
+                <span>{{ subMenu.menuName }}</span>
               </el-menu-item>
             </template>
           </el-sub-menu>
-          <el-menu-item v-else :index="menuItem.path" >
-            <span>{{menuItem.menuName}}</span>
+          <el-menu-item v-else :index="menuItem.path">
+            <span>{{ menuItem.menuName }}</span>
           </el-menu-item>
         </template>
       </el-menu>
@@ -82,24 +86,24 @@ const menuList = reactive([
 </template>
 
 <style lang="scss" scoped>
-  .menu {
-    width: 200px;
-    height: 100%;
-    flex-shrink: 0;
-    background: #545c64;
-    :deep(.el-menu) {
-      border-right: none;
-    }
-    &-col {
-      width: 100%;
-    }
+.menu {
+  width: 200px;
+  height: 100%;
+  flex-shrink: 0;
+  background: #545c64;
+  :deep(.el-menu) {
+    border-right: none;
   }
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
-  .link {
-    display: block;
+  &-col {
     width: 100%;
   }
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.link {
+  display: block;
+  width: 100%;
+}
 </style>

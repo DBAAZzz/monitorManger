@@ -39,7 +39,8 @@ export default defineComponent({
       default: []
     },
     value: {
-      default: null
+      type: String,
+      default: ''
     },
     clearable: {
       type: Boolean,
@@ -48,7 +49,7 @@ export default defineComponent({
     }
   },
   setup(props, { emit }) {
-    let InputValue = ref(null);
+    let InputValue = ref<string | number>('');
     let changeValue = (value: any): void => {
       emit('changeFunc', value)
     }

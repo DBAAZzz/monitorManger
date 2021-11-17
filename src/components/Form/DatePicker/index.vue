@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, watchEffect } from "vue";
+import { defineComponent, onMounted, reactive, ref, watchEffect } from "vue";
 import dayjs from "dayjs"
 export default defineComponent({
   emits: ['changeFunc'],
@@ -33,12 +33,13 @@ export default defineComponent({
       default: '结束日期'
     },
     value: {
-      default: null
+      type: Array,
+      default: []
     }
   },
   setup(props, { emit }) {
-    let InputValue = ref(null);
-    let changeValue = (value: Array<Date>): void => {
+    let InputValue = ref<Date[]>([])
+    let changeValue = (value: any): void => {
       if (value) {
         emit('changeFunc', [
           dayjs((value[0])).format('YYYY-MM-DD HH:mm:ss'),
@@ -52,7 +53,7 @@ export default defineComponent({
       }
     }
     watchEffect((): void => {
-      InputValue.value = props.value;
+      InputValue.value = props.value as Array<Date>;
     })
     onMounted(() => {
 
