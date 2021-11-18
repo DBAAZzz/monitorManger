@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
+import { defineComponent, onMounted, onUnmounted } from 'vue'
 import * as echarts from 'echarts/core';
 import {
   GridComponent,
@@ -12,7 +12,6 @@ import {
 import { LineChart, LineSeriesOption } from 'echarts/charts';
 import { UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
-
 
 export default defineComponent({
   props: {
@@ -44,7 +43,9 @@ export default defineComponent({
       | TooltipComponentOption
     >;
 
-    var option: EChartsOption;
+    let myChart;
+
+    let option: EChartsOption;
 
     option = {
       xAxis: {
@@ -87,9 +88,18 @@ export default defineComponent({
 
     onMounted(() => {
       var chartDom = document.getElementById('line')!;
-      var myChart = echarts.init(chartDom);
+      myChart = echarts.init(chartDom);
       option && myChart.setOption(option);
     })
+
+    onUnmounted(() => {
+      myChart?.dispose()
+    })
+
+    window.addEventListener('resize', () => {
+      myChart?.resize()
+    })
+
 
   },
 })

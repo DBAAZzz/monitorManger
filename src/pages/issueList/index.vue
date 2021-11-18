@@ -1,8 +1,51 @@
 <script setup lang="ts" >
+import Table from '@/components/Form/Table/index.vue'
+import { columnType, tableType } from '@/components/Form/Table/type'
+let columnArray: Array<columnType> = [
+  {
+    key: 'date',
+    label: 'date'
+  },
+  {
+    key: 'name',
+    label: '名字',
+  },
+  {
+    key: 'state',
+    label: '州'
+  },
+  {
+    key: 'city',
+    label: '城市'
+  },
+  {
+    key: 'address',
+    label: '地址'
+  }
+]
+
+let tableData: Array<tableType> = [
+  {
+    date: '2016-05-03',
+    name: 'Tom',
+    state: 'California',
+    city: 'Los Angeles',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-02',
+    name: 'Tom',
+    state: 'California',
+    city: 'Los Angeles',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+];
 </script>
 
 <template>
-  <div class="issue_list"></div>
+  <div class="issue_list">
+    <Table :table-column="columnArray" :table-data="tableData"></Table>
+  </div>
 </template>
 
 <style lang="scss" scoped>

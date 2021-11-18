@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, nextTick, PropType, reactive, ref, watchEffect } from 'vue'
+import { defineComponent, nextTick, PropType, reactive, watchEffect } from 'vue'
 import Select from '../Select/index.vue'
 import Input from '../Input/index.vue'
 import DatePicker from '../DatePicker/index.vue'
