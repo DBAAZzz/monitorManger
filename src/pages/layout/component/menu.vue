@@ -1,7 +1,8 @@
 <script setup lang="ts" >
 import { reactive } from 'vue';
+import { menuType } from './type'
 
-const menuList = reactive([
+const menuList = reactive<menuType[]>([
   {
     menuName: '用户中心',
     id: 1,
@@ -16,30 +17,43 @@ const menuList = reactive([
             menuName: '测试',
             id: 3,
             path: '/home',
+            menuList: []
           },
         ],
       },
     ],
   },
   {
-    menuName: '活动管理',
+    menuName: '异常监控',
     id: 4,
     path: '/activity',
     menuList: [
       {
-        menuName: '转盘活动',
+        menuName: 'issue 看板',
         id: 5,
-        path: '/user',
+        path: '/issueBoard',
         menuList: [],
       },
+      {
+        menuName: 'issue 列表',
+        id: 6,
+        path: '/issueList',
+        menuList: [],
+      },
+      {
+        menuName: 'api 请求错误列表',
+        id: 7,
+        path: '/apiError',
+        menuList: []
+      },
+      {
+        menuName: '错误报告',
+        id: 8,
+        path: 'errorReport',
+        menuList: []
+      }
     ],
-  },
-  {
-    menuName: '测试中心',
-    id: 6,
-    path: '/setting',
-    menuList: [],
-  },
+  }
 ]);
 </script>
 
@@ -53,8 +67,8 @@ const menuList = reactive([
         text-color="#fff"
         router
       >
-        <template v-for="menuItem in menuList" :key="menuItem.id" >
-          <el-sub-menu v-if="menuItem.menuList.length != 0" :index="menuItem.path" >
+        <template v-for="menuItem in menuList" :key="menuItem.id">
+          <el-sub-menu v-if="menuItem.menuList.length != 0" :index="menuItem.path">
             <template #title>
               <span>{{ menuItem.menuName }}</span>
             </template>
@@ -76,7 +90,7 @@ const menuList = reactive([
               </el-menu-item>
             </template>
           </el-sub-menu>
-          <el-menu-item v-else :index="menuItem.path" >
+          <el-menu-item v-else :index="menuItem.path">
             <span>{{ menuItem.menuName }}</span>
           </el-menu-item>
         </template>

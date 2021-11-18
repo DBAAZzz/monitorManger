@@ -1,6 +1,8 @@
 import { RouteRecordRaw } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 
+
+
 export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -11,7 +13,42 @@ export const routes: Array<RouteRecordRaw> = [
       {
         path: '/home',
         name: 'home',
-        component: defineAsyncComponent(() => import(`@/pages/home/index.vue`))
+        component: defineAsyncComponent(() => import(`@/pages/home/index.vue`)),
+        meta: {
+          title: '首页'
+        }
+      },
+      {
+        path: '/issueBoard',
+        name: 'issueBoard',
+        component: defineAsyncComponent(() => import(`@/pages/issueBoard/index.vue`)),
+        meta: {
+          title: 'issue 看板'
+        }
+      },
+      {
+        path: '/issueList',
+        name: 'issueList',
+        component: defineAsyncComponent(() => import(`@/pages/issueList/index.vue`)),
+        meta: {
+          title: 'issue 列表'
+        }
+      },
+      {
+        path: '/apiError',
+        name: 'apiError',
+        component: defineAsyncComponent(() => import(`@/pages/apiError/index.vue`)),
+        meta: {
+          title: 'api 错误列表'
+        }
+      },
+      {
+        path: '/errorReport',
+        name: 'errorReport',
+        component: defineAsyncComponent(() => import(`@/pages/errorReport/index.vue`)),
+        meta: {
+          title: '错误报告'
+        }
       }
     ]
   },

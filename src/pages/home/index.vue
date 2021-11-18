@@ -3,6 +3,7 @@ import { onMounted } from 'vue';
 import { login, getList } from '@api/home';
 import type { DefaultOption } from '@types';
 import SearchBox from '@/components/Form/SearchBox/index.vue';
+import LineChart from '@/components/LineChart/index.vue'
 
 const options: DefaultOption[] = [
   {
@@ -50,7 +51,7 @@ const getFriendList = async () => {
 };
 
 onMounted(() => {
-
+  
 });
 </script>
 
@@ -61,6 +62,7 @@ onMounted(() => {
     <el-button @click="loginFunc('1292094030@qq.com', '1234561')">错误登录</el-button>
     <el-button @click="getFriendList()">获取列表</el-button>
     <el-button></el-button>
+    <LineChart width="100%" height="400px"></LineChart>
   </div>
 </template>
 
