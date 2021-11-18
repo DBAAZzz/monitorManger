@@ -103,6 +103,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@charset "UTF-8";
 .search-item {
   display: inline-block;
 }

@@ -68,6 +68,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@charset "UTF-8";
 .search-input {
   display: inline-block;
   margin: 0 15px 15px 0;

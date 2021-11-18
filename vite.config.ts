@@ -2,8 +2,10 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig(({ command, mode }) => {
+  console.log('command', command)
   return {
     server: {
       host: '0.0.0.0',
@@ -52,7 +54,13 @@ export default defineConfig(({ command, mode }) => {
     },
     plugins: [
       vue(),
-      vueJsx()
+      vueJsx(),
+      viteMockServe({
+        mockPath: './mock',
+        supportTs: true,
+        localEnabled: command === 'serve',
+        prodEnabled: false
+      }),
     ]
   }
 })

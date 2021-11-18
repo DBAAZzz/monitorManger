@@ -1,5 +1,5 @@
 <script setup lang="ts" >
-import { reactive } from "vue";
+import { reactive } from 'vue';
 
 const menuList = reactive([
   {
@@ -15,11 +15,11 @@ const menuList = reactive([
           {
             menuName: '测试',
             id: 3,
-            path: '/home'
-          }
-        ]
-      }
-    ]
+            path: '/home',
+          },
+        ],
+      },
+    ],
   },
   {
     menuName: '活动管理',
@@ -30,17 +30,17 @@ const menuList = reactive([
         menuName: '转盘活动',
         id: 5,
         path: '/user',
-        menuList: []
-      }
-    ]
+        menuList: [],
+      },
+    ],
   },
   {
     menuName: '测试中心',
     id: 6,
     path: '/setting',
-    menuList: []
-  }
-])
+    menuList: [],
+  },
+]);
 </script>
 
 <template>
@@ -53,8 +53,8 @@ const menuList = reactive([
         text-color="#fff"
         router
       >
-        <template v-for="menuItem in menuList" :key="menuItem.id">
-          <el-sub-menu v-if="menuItem.menuList.length != 0" :index="menuItem.path">
+        <template v-for="menuItem in menuList" :key="menuItem.id" >
+          <el-sub-menu v-if="menuItem.menuList.length != 0" :index="menuItem.path" >
             <template #title>
               <span>{{ menuItem.menuName }}</span>
             </template>
@@ -76,7 +76,7 @@ const menuList = reactive([
               </el-menu-item>
             </template>
           </el-sub-menu>
-          <el-menu-item v-else :index="menuItem.path">
+          <el-menu-item v-else :index="menuItem.path" >
             <span>{{ menuItem.menuName }}</span>
           </el-menu-item>
         </template>
@@ -86,6 +86,7 @@ const menuList = reactive([
 </template>
 
 <style lang="scss" scoped>
+@charset "UTF-8";
 .menu {
   width: 200px;
   height: 100%;

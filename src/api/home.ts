@@ -10,7 +10,7 @@ export function login(data: object) {
 }
 
 export function getList(params: object) {
-  return http.get('/moments/getAllMoments', {
+  return http.get('/mock/event', {
     params
   }, {
     isNeedToken: true,

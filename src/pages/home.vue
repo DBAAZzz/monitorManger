@@ -6,10 +6,11 @@
   <div class="home">
     <p class="text">我是hello页面</p>
   </div>
-  <el-button>测试</el-button>
+  <el-button></el-button>
 </template>
 
 <style lang="scss" scoped>
+@charset "UTF-8";
   .home {
     background: burlywood;
     .text {

@@ -6,6 +6,7 @@
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
+    // 生成相应的sourceMap文件
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -16,8 +17,9 @@
     "skipLibCheck": true,
     "noImplicitAny": false,
     "baseUrl": ".",
+    // 映射列表
     "paths": {
-      "@": [
+      "@/*": [
         "src/*"
       ],
       "@types": [

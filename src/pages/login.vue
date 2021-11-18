@@ -10,5 +10,5 @@
 
 
 <style lang="scss" scoped>
-
+@charset "UTF-8";
 </style>

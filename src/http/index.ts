@@ -107,7 +107,7 @@ class Http implements RequestProxyType {
 }
 
 const http = new Http({
-  baseURL: '/api'
+  baseURL: ''
 })
 
 export default http
