@@ -30,6 +30,7 @@ export default defineComponent({
       v-for="columnItem in $props.tableColumn"
       :key="columnItem.key"
       :prop="columnItem.key"
+      :width="columnItem.width"
       :label="columnItem.label"
       :align="columnItem.align || 'center'"
     ></el-table-column>

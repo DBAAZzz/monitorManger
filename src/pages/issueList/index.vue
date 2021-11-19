@@ -3,6 +3,11 @@ import Table from '@/components/Form/Table/index.vue'
 import { columnType, tableType } from '@/components/Form/Table/type'
 let columnArray: Array<columnType> = [
   {
+    key: 'issue',
+    label: '问题',
+    width: '500'
+  },
+  {
     key: 'date',
     label: 'date'
   },
@@ -26,6 +31,7 @@ let columnArray: Array<columnType> = [
 
 let tableData: Array<tableType> = [
   {
+    issue: '信心',
     date: '2016-05-03',
     name: 'Tom',
     state: 'California',
@@ -33,6 +39,7 @@ let tableData: Array<tableType> = [
     address: 'No. 189, Grove St, Los Angeles',
   },
   {
+    issue: 'Error',
     date: '2016-05-02',
     name: 'Tom',
     state: 'California',
@@ -50,4 +57,7 @@ let tableData: Array<tableType> = [
 
 <style lang="scss" scoped>
 @charset "UTF-8";
+.issue_list {
+  width: 100%;
+}
 </style>
