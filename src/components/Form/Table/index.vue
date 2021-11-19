@@ -23,11 +23,10 @@ export default defineComponent({
 })
 </script>
 
-
 <template>
   <el-table :data="tableData" style="width: 100%" height="250">
     <el-table-column
-      v-for="columnItem in $props.tableColumn"
+      v-for="columnItem in tableColumn"
       :key="columnItem.key"
       :prop="columnItem.key"
       :width="columnItem.width"
