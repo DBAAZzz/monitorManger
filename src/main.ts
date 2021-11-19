@@ -8,16 +8,10 @@ import locale from 'element-plus/lib/locale/lang/zh-cn';
 import 'element-plus/dist/index.css';
 import { createI18n } from 'vue-i18n';
 
-// import { setupProdMockServer } from '../mockProdServer';
-
 // 国际化语言包
 const i18n = createI18n({
   locale: 'ch',
 });
-
-// if(import.meta.env.MODE == 'development') {
-//   setupProdMockServer()
-// }
 
 const app = createApp(App);
 
