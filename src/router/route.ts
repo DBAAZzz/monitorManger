@@ -2,12 +2,24 @@ import { RouteRecordRaw } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 
 
+export const staticRoutes: Array<RouteRecordRaw> = [
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/pages/login.vue')
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/pages/404.vue')
+  }
+]
 
-export const routes: Array<RouteRecordRaw> = [
+export const asyncRoutes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'layout',
-    component: defineAsyncComponent(() => import(`@/pages/layout/index.vue`)),
+    component: () => import(`@/pages/layout/index.vue`),
     redirect: { name: 'home' },
     children: [
       {
@@ -31,7 +43,8 @@ export const routes: Array<RouteRecordRaw> = [
         name: 'issueList',
         component: defineAsyncComponent(() => import(`@/pages/issueList/index.vue`)),
         meta: {
-          title: 'issue 列表'
+          title: 'issue 列表',
+          permissions: ['editer']
         }
       },
       {
@@ -53,8 +66,7 @@ export const routes: Array<RouteRecordRaw> = [
     ]
   },
   {
-    path: '/login',
-    name: 'login',
-    component: defineAsyncComponent(() => import(`@/pages/login.vue`))
+    path: '/:catchAll(.*)',
+    redirect: '/404',
   },
 ]

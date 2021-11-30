@@ -1,6 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
+import '@/config/permission'
+import store, { key } from './store'
 
 // 内置ElementPlus并设置语言为中文
 import ElementPlus from 'element-plus';
@@ -15,7 +17,8 @@ const i18n = createI18n({
 
 const app = createApp(App);
 
-app.use(router);
+app.use(router).use(store, key);
 app.mount('#app');
 app.use(ElementPlus, { locale, size: 'small' });
 app.use(i18n);
+
