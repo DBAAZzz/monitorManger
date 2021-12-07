@@ -13,6 +13,7 @@ const modules = {}
  * files.keys().forEach((key) => {
  *  modules[key.replace(/(\.\/|\.ts)/g, '')] = files(key).default
  * })
+ * 用文件名作为模块名
  */
 for (const key in files) {
   modules[key.replace(/(\.\/modules\/|\.ts)/g, '')] = files[key].default
