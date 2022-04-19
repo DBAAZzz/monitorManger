@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import { routes } from './route';
+import { staticRoutes } from './route';
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes: staticRoutes
 })
 
 router.beforeEach((to, from, next) => {

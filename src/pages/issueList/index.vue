@@ -1,11 +1,16 @@
+
 <script setup lang="ts" >
 import Table from '@/components/Form/Table/index.vue'
 import { columnType, tableType } from '@/components/Form/Table/type'
+import { onMounted } from 'vue';
+import { Test } from './component'
+
 let columnArray: Array<columnType> = [
   {
     key: 'issue',
     label: '问题',
-    width: '500'
+    width: '500',
+    slotEl: Test
   },
   {
     key: 'date',
@@ -47,6 +52,11 @@ let tableData: Array<tableType> = [
     address: 'No. 189, Grove St, Los Angeles',
   },
 ];
+
+
+onMounted(() => {
+
+})
 </script>
 
 <template>
