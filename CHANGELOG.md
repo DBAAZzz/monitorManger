@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/DBAAZzz/monitorManger/compare/v0.0.2...v0.0.3) (2022-04-20)
+
+
+### Features
+
+* 新增 standard-version 自动化版本控制 ([8489eb8](https://github.com/DBAAZzz/monitorManger/commit/8489eb844ca0a0841ce049a7317251a370d9e755))
+
+
+### Bug Fixes
+
+* table ([a9e4a82](https://github.com/DBAAZzz/monitorManger/commit/a9e4a828859516a743c0cc57a2c0a2fd75b4065d))
+
 ### [0.0.2](https://github.com/DBAAZzz/monitorManger/compare/v0.0.1...v0.0.2) (2022-04-19)
 
 ### 0.0.1 (2022-04-19)
