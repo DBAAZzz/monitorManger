@@ -61,7 +61,7 @@ onMounted(() => {
     <el-button @click="loginFunc('1292094030@qq.com', '123456')">正常登录</el-button>
     <el-button @click="loginFunc('1292094030@qq.com', '1234561')">错误登录</el-button>
     <el-button @click="getFriendList()">获取列表</el-button>
-    <el-button></el-button>
+    <el-button>新增按钮</el-button>
     <LineChart width="100%" height="400px"></LineChart>
   </div>
 </template>

@@ -1,11 +1,13 @@
 {
   "name": "vite-project",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "release": "standard-version"
+    "release": "standard-version",
+    "release:major": "standard-version -r major",
+    "release:patch": "standard-version -r patch"
   },
   "dependencies": {
     "@element-plus/icons": "^0.0.11",
